@@ -6,7 +6,7 @@ export const StoriesListItem = ({ story }) => {
             <article className="card mb-4">
                 <header className="card-header">
                     <div className="card-meta">
-                        <div>{story.date}</div>
+                        <div>{story.date}Date in tag</div>
                         <h4 className="card-title">{story.title}</h4>
                     </div>
                 </header>
