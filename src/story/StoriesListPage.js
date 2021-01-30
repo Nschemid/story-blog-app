@@ -1,20 +1,24 @@
 import React from 'react'
 import { AboutPage } from '../about/AboutPage';
 import { StoriesList } from './StoriesList'
-import { useStories } from './useStories'
+import { useResource } from '../data';
 
 export const StoriesListPage = () => {
-    const { isLoading, stories } = useStories();
+
+    const [stories] = useResource('/stories', []);
+    //const { isLoading, stories } = useStories();
 
     return (
+
         <div className="container">
             <div className="row">
-                <div className="col-md-9">
-                    <StoriesList
-                        isLoading={isLoading}
-                        stories={stories}
-                    ></StoriesList>
-                </div>
+                {stories ?
+                    (<div className="col-md-9">
+                        <StoriesList
+                            stories={stories}
+                        ></StoriesList>
+                    </div>)
+                    : (<p>Loading...</p>)}
                 <div className="col-md-3 ml-auto">
 
                     <aside className="sidebar">
