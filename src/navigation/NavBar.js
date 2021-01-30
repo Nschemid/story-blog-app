@@ -1,6 +1,18 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom';
+import firebase from 'firebase/app';
 
-export const NavBar = () => {
+export const NavBar = ({ user }) => {
+    const history = useHistory();
+
+
+    const onClickSignIn = async () => {
+        history.push('/sign-in');
+    }
+
+    const onClickSignOut = async () => {
+        firebase.auth().signOut();
+    }
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -32,10 +44,23 @@ export const NavBar = () => {
                             <a className="nav-link disabled" href="#">Disabled</a>
                         </li>
                     </ul>
-                    <form className="form-inline my-2 my-lg-0">
-                        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+                    {user ?
+                        <div style= {{display: 'flex'}}>
+                            <h5>Welcome {user.email}</h5>
+                            <button
+                                className="sign-out-button"
+                                onClick={onClickSignOut}>Log out</button>
+                        </div>
+
+
+
+                        :
+                        (<form className="form-inline my-2 my-lg-0">
+                            <button
+                                className="sign-out-button"
+                                onClick={onClickSignIn}>Sign In</button>
+                        </form>)}
+
                 </div>
             </nav>
 
