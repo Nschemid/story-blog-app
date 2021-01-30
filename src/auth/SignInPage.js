@@ -19,30 +19,38 @@ export const SignInPage = () => {
     }
 
     return (
-        <div className="full-height-page">
-            <div className="centered-container space-before">
+
+                <div className= "text-center">
+            <form className="form-signin">
                 <h1>
                     Sign-in
-                </h1>
+                        </h1>
                 {signInError
                     ? <div><p className="error-message">{signInError.message}</p></div>
                     : null}
-                <input
-                    type="text"
-                    value={emailValue}
-                    placeholder="Email address"
-                    className="full-width space-after"
-                    onChange={e => setEmailValue(e.target.value)} />
-                <input
-                    type="password"
-                    value={passwordValue}
-                    placeholder="Password"
-                    className="full-width space-after"
-                    onChange={e => setPasswordValue(e.target.value)} />
-                <button
-                    className="full-width"
-                    onClick={onClickSignIn}>Sign In</button>
-            </div>
-        </div>
+                
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            value={emailValue}
+                            placeholder="Email address"
+                            className="form-control"
+                            onChange={e => setEmailValue(e.target.value)} />
+                    </div>
+
+                    <div class="form-group">
+                        <input
+                            type="password"
+                            value={passwordValue}
+                            placeholder="Password"
+                            className="form-control"
+                            onChange={e => setPasswordValue(e.target.value)} />
+                    </div>
+                    <button
+                        className="btn btn-lg btn-dark btn-block"
+                        onClick={onClickSignIn}>Sign In</button>
+
+                </form>
+                </div>
     );
 }

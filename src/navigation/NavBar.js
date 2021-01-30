@@ -15,7 +15,7 @@ export const NavBar = ({ user }) => {
     }
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a className="navbar-brand" href="#">My ideas</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -48,7 +48,7 @@ export const NavBar = ({ user }) => {
                         <div style= {{display: 'flex'}}>
                             <h5>Welcome {user.email}</h5>
                             <button
-                                className="sign-out-button"
+                                className="btn btn-sm btn-dark btn-block"
                                 onClick={onClickSignOut}>Log out</button>
                         </div>
 
@@ -57,7 +57,7 @@ export const NavBar = ({ user }) => {
                         :
                         (<form className="form-inline my-2 my-lg-0">
                             <button
-                                className="sign-out-button"
+                                className="btn btn-sm btn-dark btn-block"
                                 onClick={onClickSignIn}>Sign In</button>
                         </form>)}
 
