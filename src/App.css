@@ -176,4 +176,34 @@ img {
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
+
+  .error-message {
+    background-color: #ffcccb;
+    border-radius: 4px;
+    padding: 16px;
+  }
+
+  .container {
+     padding-top: 20px;
+  }
+
+  .card-img-top {
+    width: 85%;
+    height: 17vw;
+    object-fit: cover;
+}
+
+.new-story-button {
+    align-items: center;
+    background-color: #ddd;
+    border-radius: 8px;
+    display: flex;
+    flex: 1;
+    height: 135px;
+    justify-content: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 190px;
+  }
+
   
