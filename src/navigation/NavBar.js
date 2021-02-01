@@ -10,13 +10,19 @@ export const NavBar = ({ user }) => {
         history.push('/sign-in');
     }
 
+    const onClickMyStories = async () => {
+        history.push('/list-my-stories');
+    }
+
+    
+
     const onClickSignOut = async () => {
         firebase.auth().signOut();
     }
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a className="navbar-brand" href="#">My ideas</a>
+                <a className="navbar-brand" href="/">My ideas</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -45,8 +51,11 @@ export const NavBar = ({ user }) => {
                         </li>
                     </ul>
                     {user ?
-                        <div style= {{display: 'flex'}}>
-                            <h5>Welcome {user.email}</h5>
+                        <div style= {{display: 'flex'}} >
+                            <h5 style= {{display: 'flex',  color: 'white'}}>Welcome {user.email}</h5>
+                            <button
+                                className="btn btn-sm btn-dark btn-block"
+                                onClick={onClickMyStories}>My Stories</button>
                             <button
                                 className="btn btn-sm btn-dark btn-block"
                                 onClick={onClickSignOut}>Log out</button>

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { SignInPage, PrivateRoute } from './auth';
 import {
     StoriesListPage,
-    addStoryPage
+    MyStoriesPage
 } from './story';
 import { NavBar } from './navigation';
 
@@ -18,8 +18,8 @@ const routes = [{
 },
 
 {
-    path: '/add-story',
-    Component: addStoryPage,
+    path: '/list-my-stories',
+    Component: MyStoriesPage,
     exact: true,
     private: true
 },
